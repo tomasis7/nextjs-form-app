@@ -1,0 +1,22 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+}  );    </FormPage>      <FormComponent />      <Title>Register New User</Title>    <FormPage>  return (export default function Form() {`;  text-align: center;  margin-bottom: 2rem;const Title = styled.h1``;  margin: 0 auto;  max-width: 500px;const FormPage = styled.div`import styled from 'styled-components';import FormComponent from '../components/Form';
