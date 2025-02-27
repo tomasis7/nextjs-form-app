@@ -1,6 +1,7 @@
 'use client';
 
 import styled from "styled-components";
+import { UseFormRegister } from "react-hook-form";
 
 const InputContainer = styled.div`
   margin-bottom: 1.5rem;
@@ -34,7 +35,7 @@ const ErrorMessage = styled.p`
 
 interface PasswordFieldProps {
   name: string;
-  register: any;
+  register: UseFormRegister<any>;
   error?: string;
 }
 

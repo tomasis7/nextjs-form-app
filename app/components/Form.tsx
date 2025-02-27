@@ -22,6 +22,13 @@ const FormContainer = styled.form`
   }
 `;
 
+// Define the form data type
+interface FormData {
+  name: string;
+  email: string;
+  password: string;
+}
+
 const schema = yup.object().shape({
   name: yup.string().required("Namn är obligatoriskt"),
   email: yup.string().email("Ogiltig e-post").required("E-post är obligatoriskt"),
@@ -33,14 +40,17 @@ export default function Form() {
   const [loading, setLoading] = useState(false);
   const router = useRouter();
   
-  const { register, handleSubmit, reset, formState: { errors } } = useForm({
+  const { register, handleSubmit, reset, formState: { errors } } = useForm<FormData>({
     resolver: yupResolver(schema),
   });
 
-  const onSubmit = async (data: any) => {
+  const onSubmit = async (data: FormData) => {
     setLoading(true);
     try {
-      await addUser(data);
+      await addUser({
+        ...data,
+        id: Math.random().toString(36).substring(2, 9) // Generate a temporary ID
+      });
       alert("Registrering lyckades!");
       reset();
       router.push("/profile");

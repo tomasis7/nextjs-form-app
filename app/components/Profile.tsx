@@ -88,6 +88,7 @@ interface User {
   id: string;
   name: string;
   email: string;
+  password?: string;
 }
 
 export default function Profile() {
@@ -97,7 +98,7 @@ export default function Profile() {
 
   useEffect(() => {
     fetchUsers();
-  }, [fetchUsers]);
+  }, []); // Remove fetchUsers from dependency array to avoid infinite loop
 
   const handleEdit = (user: User) => {
     setEditingId(user.id);
