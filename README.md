@@ -20,6 +20,24 @@ You can start editing the page by modifying `app/page.tsx`. The page auto-update
 
 This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
+## Project Structure
+
+This project has been migrated from a React Router (v6/v7) structure to Next.js App Router. The main changes include:
+
+- React Router routes have been converted to Next.js file-based routing
+- Components are now organized in the `/app` directory following Next.js conventions
+- Route parameters use the `[param]` syntax instead of the `:param` syntax
+- Links use Next.js `Link` component instead of React Router's
+
+### Route Conversion Guide
+
+| Old Route (React Router)  | New Route (Next.js)       |
+|---------------------------|---------------------------|
+| /                         | /app/page.tsx             |
+| /about                    | /app/about/page.tsx       |
+| /users/:id                | /app/users/[id]/page.tsx  |
+| /products/:category/:id   | /app/products/[category]/[id]/page.tsx |
+
 ## Learn More
 
 To learn more about Next.js, take a look at the following resources:
