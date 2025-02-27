@@ -24,13 +24,13 @@ export default function Navigation() {
   return (
     <Nav>
       <NavList>
-        <NavItem active={pathname === '/'}></NavItem>
+        <NavItem active={pathname === '/'}>
           <Link href="/">Home</Link>
         </NavItem>
-        <NavItem active={pathname === '/form'}></NavItem>
+        <NavItem active={pathname === '/form'}>
           <Link href="/form">Registration</Link>
         </NavItem>
-        <NavItem active={pathname === '/profile'}></NavItem>
+        <NavItem active={pathname === '/profile'}>
           <Link href="/profile">Profile</Link>
         </NavItem>
       </NavList>

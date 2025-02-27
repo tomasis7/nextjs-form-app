@@ -1,162 +1,161 @@
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-}  );    </div>      )}        </UserList>          ))}            </UserItem>              )}                </>                  </ButtonGroup>                    <DeleteButton onClick={() => deleteUser(user.id)}>Delete</DeleteButton>                    <EditButton onClick={() => handleEdit(user)}>Edit</EditButton>                  <ButtonGroup>                  <p>{user.email}</p>                  <h3>{user.name}</h3>                <>              ) : (                </UserForm>                  </ButtonGroup>                    <CancelButton onClick={() => setEditingId(null)}>Cancel</CancelButton>                    <SaveButton onClick={handleUpdate}>Save</SaveButton>                  <ButtonGroup>                  </InputGroup>                    />                      onChange={(e) => setEditedUser({ ...editedUser, email: e.target.value })}                      value={editedUser.email}                      type="email"                    <Input                     <Label>Email</Label>                  <InputGroup>                  </InputGroup>                    />                      onChange={(e) => setEditedUser({ ...editedUser, name: e.target.value })}                      value={editedUser.name}                      type="text"                    <Input                     <Label>Name</Label>                  <InputGroup>                <UserForm>              {editingId === user.id ? (            <UserItem key={user.id}>          {users.map((user: User) => (        <UserList>      ) : (        <EmptyState>No users found.</EmptyState>      {users.length === 0 ? (    <div>  return (  };    }      setEditingId(null);      updateUser(editingId, editedUser);    if (editingId !== null) {  const handleUpdate = () => {  };    setEditedUser({ name: user.name, email: user.email });    setEditingId(user.id);  const handleEdit = (user: User) => {  }, [fetchUsers]);    fetchUsers();  useEffect(() => {  const [editedUser, setEditedUser] = useState({ name: '', email: '' });  const [editingId, setEditingId] = useState<string | null>(null);  const { users, deleteUser, updateUser, fetchUsers } = useUserStore();export default function Profile() {}  email: string;  name: string;  id: string;interface User {`;  margin-top: 2rem;  color: #666;  font-size: 1.2rem;  text-align: center;const EmptyState = styled.p``;  color: white;  background-color: #9e9e9e;const CancelButton = styled(Button)``;  color: white;  background-color: #2196f3;const SaveButton = styled(Button)``;  color: white;  background-color: #f44336;const DeleteButton = styled(Button)``;  color: white;  background-color: #4caf50;const EditButton = styled(Button)``;  font-weight: 500;  cursor: pointer;  border-radius: 4px;  border: none;  padding: 0.5rem 1rem;const Button = styled.button``;  margin-top: 1rem;  gap: 0.5rem;  display: flex;const ButtonGroup = styled.div``;  border-radius: 4px;  border: 1px solid #ccc;  padding: 0.5rem;const Input = styled.input``;  font-weight: 500;  margin-bottom: 0.25rem;const Label = styled.label``;  flex-direction: column;  display: flex;const InputGroup = styled.div``;  gap: 1rem;  flex-direction: column;  display: flex;const UserForm = styled.div``;  }    background-color: #1a1a1a;  @media (prefers-color-scheme: dark) {    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);  margin-bottom: 1rem;  border-radius: 8px;  padding: 1.5rem;  background-color: #f9f9f9;const UserItem = styled.li``;  padding: 0;  list-style: none;const UserList = styled.ul`import styled from 'styled-components';import { useUserStore } from '../../lib/store';import { useEffect, useState } from 'react';'use client';
+'use client';
+
+import { useEffect, useState } from 'react';
+import { useUserStore } from '../../lib/store';
+import styled from 'styled-components';
+
+const UserList = styled.ul`
+  list-style: none;
+  padding: 0;
+`;
+
+const UserItem = styled.li`
+  background-color: #f9f9f9;
+  padding: 1.5rem;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  
+  @media (prefers-color-scheme: dark) {
+    background-color: #1a1a1a;
+  }
+`;
+
+const UserForm = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+`;
+
+const InputGroup = styled.div`
+  display: flex;
+  flex-direction: column;
+`;
+
+const Label = styled.label`
+  margin-bottom: 0.25rem;
+  font-weight: 500;
+`;
+
+const Input = styled.input`
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+`;
+
+const ButtonGroup = styled.div`
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 1rem;
+`;
+
+const Button = styled.button`
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 500;
+`;
+
+const EditButton = styled(Button)`
+  background-color: #4caf50;
+  color: white;
+`;
+
+const DeleteButton = styled(Button)`
+  background-color: #f44336;
+  color: white;
+`;
+
+const SaveButton = styled(Button)`
+  background-color: #2196f3;
+  color: white;
+`;
+
+const CancelButton = styled(Button)`
+  background-color: #9e9e9e;
+  color: white;
+`;
+
+const EmptyState = styled.p`
+  text-align: center;
+  font-size: 1.2rem;
+  color: #666;
+  margin-top: 2rem;
+`;
+
+interface User {
+  id: string;
+  name: string;
+  email: string;
+}
+
+export default function Profile() {
+  const { users, deleteUser, updateUser, fetchUsers } = useUserStore();
+  const [editingId, setEditingId] = useState<string | null>(null);
+  const [editedUser, setEditedUser] = useState({ name: '', email: '' });
+
+  useEffect(() => {
+    fetchUsers();
+  }, [fetchUsers]);
+
+  const handleEdit = (user: User) => {
+    setEditingId(user.id);
+    setEditedUser({ name: user.name, email: user.email });
+  };
+
+  const handleUpdate = () => {
+    if (editingId !== null) {
+      updateUser(editingId, editedUser);
+      setEditingId(null);
+    }
+  };
+
+  return (
+    <div>
+      {users.length === 0 ? (
+        <EmptyState>No users found.</EmptyState>
+      ) : (
+        <UserList>
+          {users.map((user: User) => (
+            <UserItem key={user.id}>
+              {editingId === user.id ? (
+                <UserForm>
+                  <InputGroup>
+                    <Label>Name</Label>
+                    <Input 
+                      type="text"
+                      value={editedUser.name}
+                      onChange={(e) => setEditedUser({ ...editedUser, name: e.target.value })}
+                    />
+                  </InputGroup>
+                  <InputGroup>
+                    <Label>Email</Label>
+                    <Input 
+                      type="email"
+                      value={editedUser.email}
+                      onChange={(e) => setEditedUser({ ...editedUser, email: e.target.value })}
+                    />
+                  </InputGroup>
+                  <ButtonGroup>
+                    <SaveButton onClick={handleUpdate}>Save</SaveButton>
+                    <CancelButton onClick={() => setEditingId(null)}>Cancel</CancelButton>
+                  </ButtonGroup>
+                </UserForm>
+              ) : (
+                <>
+                  <h3>{user.name}</h3>
+                  <p>{user.email}</p>
+                  <ButtonGroup>
+                    <EditButton onClick={() => handleEdit(user)}>Edit</EditButton>
+                    <DeleteButton onClick={() => deleteUser(user.id)}>Delete</DeleteButton>
+                  </ButtonGroup>
+                </>
+              )}
+            </UserItem>
+          ))}
+        </UserList>
+      )}
+    </div>
+  );
+}

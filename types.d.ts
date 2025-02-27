@@ -1,24 +1,23 @@
+// Global type definitions
 
+interface User {
+  id: string;
+  name: string;
+  email: string;
+  password: string;
+}
 
+declare module "*.svg" {
+  const content: React.FunctionComponent<React.SVGAttributes<SVGElement>>;
+  export default content;
+}
 
+declare module "*.png" {
+  const content: string;
+  export default content;
+}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-}  export default content;  const content: string;declare module "*.jpg" {}  export default content;  const content: string;declare module "*.png" {}  export default content;  const content: React.FunctionComponent<React.SVGAttributes<SVGElement>>;declare module "*.svg" {}  password: string;  email: string;  name: string;  id: string;interface User {// Global type definitions
+declare module "*.jpg" {
+  const content: string;
+  export default content;
+}

@@ -1,35 +1,34 @@
+import styled, { keyframes } from 'styled-components';
 
+const spin = keyframes`
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+`;
 
+const LoadingContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 300px;
+`;
 
+const Spinner = styled.div`
+  border: 4px solid rgba(0, 0, 0, 0.1);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border-top-color: #0070f3;
+  animation: ${spin} 1s ease infinite;
+`;
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-}  );    </LoadingContainer>      <Spinner />    <LoadingContainer>  return (export default function Loading() {`;  animation: ${spin} 1s ease infinite;  border-top-color: #0070f3;  border-radius: 50%;  height: 40px;  width: 40px;  border: 4px solid rgba(0, 0, 0, 0.1);const Spinner = styled.div``;  min-height: 300px;  align-items: center;  justify-content: center;  display: flex;const LoadingContainer = styled.div``;  }    transform: rotate(360deg);  to {  }    transform: rotate(0deg);  from {const spin = keyframes`import styled, { keyframes } from 'styled-components';
+export default function Loading() {
+  return (
+    <LoadingContainer>
+      <Spinner />
+    </LoadingContainer>
+  );
+}

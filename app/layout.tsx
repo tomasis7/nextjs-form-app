@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 import { Inter } from 'next/font/google';
-import styled from 'styled-components';
 import Navigation from './components/Navigation';
 import './globals.css';
 import StyledComponentsRegistry from './registry';
+import LayoutContainer from "./LayoutContainer";
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -11,12 +11,6 @@ export const metadata: Metadata = {
   title: 'Next Form App',
   description: 'Migrated from React Router to Next.js',
 };
-
-const Container = styled.div`
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 1rem;
-`;
 
 export default function RootLayout({
   children,
@@ -27,10 +21,10 @@ export default function RootLayout({
     <html lang="en">
       <body className={inter.className}>
         <StyledComponentsRegistry>
-          <Container>
+          <LayoutContainer>
             <Navigation />
             <main>{children}</main>
-          </Container>
+          </LayoutContainer>
         </StyledComponentsRegistry>
       </body>
     </html>

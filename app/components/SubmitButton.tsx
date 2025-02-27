@@ -1,36 +1,35 @@
+'use client';
 
+import styled from "styled-components";
 
+const Button = styled.button`
+  background-color: #0070f3;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  
+  &:hover {
+    background-color: #0051a2;
+  }
+  
+  &:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+  }
+`;
 
+interface SubmitButtonProps {
+  text: string;
+  disabled?: boolean;
+}
 
+const SubmitButton = ({ text, disabled }: SubmitButtonProps) => {
+  return <Button type="submit" disabled={disabled}>{text}</Button>;
+};
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-export default SubmitButton;};  return <Button type="submit" disabled={disabled}>{text}</Button>;const SubmitButton = ({ text, disabled }: SubmitButtonProps) => {}  disabled?: boolean;  text: string;interface SubmitButtonProps {`;  }    cursor: not-allowed;    background-color: #ccc;  &:disabled {    }    background-color: #0051a2;  &:hover {    transition: background-color 0.3s;  cursor: pointer;  font-weight: 500;  font-size: 1rem;  padding: 0.75rem 1.5rem;  border-radius: 4px;  border: none;  color: white;  background-color: #0070f3;const Button = styled.button`import styled from "styled-components";'use client';
+export default SubmitButton;

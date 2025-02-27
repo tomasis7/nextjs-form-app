@@ -1,63 +1,62 @@
+'use client';
 
+import { useEffect } from 'react';
+import styled from 'styled-components';
 
+const ErrorContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  max-width: 800px;
+  margin: 0 auto;
+`;
 
+const ErrorTitle = styled.h2`
+  color: #e00;
+  margin-bottom: 1rem;
+`;
 
+const ErrorText = styled.p`
+  margin-bottom: 1.5rem;
+`;
 
+const ResetButton = styled.button`
+  background-color: #0070f3;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  
+  &:hover {
+    background-color: #0051a2;
+  }
+`;
 
+export default function Error({
+  error,
+  reset,
+}: {
+  error: Error & { digest?: string };
+  reset: () => void;
+}) {
+  useEffect(() => {
+    console.error(error);
+  }, [error]);
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-}  );    </ErrorContainer>      </ResetButton>        Try again      <ResetButton onClick={reset}>      </ErrorText>        An error occurred while trying to display this page. Please try again.      <ErrorText>      <ErrorTitle>Something went wrong!</ErrorTitle>    <ErrorContainer>  return (  }, [error]);    console.error(error);  useEffect(() => {}) {  reset: () => void;  error: Error & { digest?: string };}: {  reset,  error,export default function Error({`;  }    background-color: #0051a2;  &:hover {    cursor: pointer;  font-weight: 500;  font-size: 1rem;  padding: 0.75rem 1.5rem;  border-radius: 4px;  border: none;  color: white;  background-color: #0070f3;const ResetButton = styled.button``;  margin-bottom: 1.5rem;const ErrorText = styled.p``;  margin-bottom: 1rem;  color: #e00;const ErrorTitle = styled.h2``;  margin: 0 auto;  max-width: 800px;  padding: 2rem;  justify-content: center;  align-items: center;  flex-direction: column;  display: flex;const ErrorContainer = styled.div`import styled from 'styled-components';import { useEffect } from 'react';'use client';
+  return (
+    <ErrorContainer>
+      <ErrorTitle>Something went wrong!</ErrorTitle>
+      <ErrorText>
+        An error occurred while trying to display this page. Please try again.
+      </ErrorText>
+      <ResetButton onClick={reset}>
+        Try again
+      </ResetButton>
+    </ErrorContainer>
+  );
+}
