@@ -1,38 +1,39 @@
+'use client';
 
+import Link from 'next/link';
+import { usePathname } from 'next/navigation';
+import styled from 'styled-components';
 
+const Nav = styled.nav`
+  margin-bottom: 2rem;
+`;
 
+const NavList = styled.ul`
+  display: flex;
+  list-style: none;
+  gap: 1.5rem;
+`;
 
+const NavItem = styled.li<{ active: boolean }>`
+  font-weight: ${(props) => (props.active ? 'bold' : 'normal')};
+`;
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-}  );    </Nav>      </NavList>        </NavItem>          <Link href="/profile">Profile</Link>        <NavItem active={pathname === '/profile'}>        </NavItem>          <Link href="/form">Registration</Link>        <NavItem active={pathname === '/form'}>        </NavItem>          <Link href="/">Home</Link>        <NavItem active={pathname === '/'}>      <NavList>    <Nav>  return (    const pathname = usePathname();export default function Navigation() {`;  font-weight: ${(props: { active: boolean }) => (props.active ? 'bold' : 'normal')};const NavItem = styled.li``;  gap: 1.5rem;  list-style: none;  display: flex;const NavList = styled.ul``;  margin-bottom: 2rem;const Nav = styled.nav`import styled from 'styled-components';import { usePathname } from 'next/navigation';import Link from 'next/link';
+export default function Navigation() {
+  const pathname = usePathname();
+  
+  return (
+    <Nav>
+      <NavList>
+        <NavItem active={pathname === '/'}></NavItem>
+          <Link href="/">Home</Link>
+        </NavItem>
+        <NavItem active={pathname === '/form'}></NavItem>
+          <Link href="/form">Registration</Link>
+        </NavItem>
+        <NavItem active={pathname === '/profile'}></NavItem>
+          <Link href="/profile">Profile</Link>
+        </NavItem>
+      </NavList>
+    </Nav>
+  );
+}

@@ -1,28 +1,27 @@
+'use client';
 
+import React, { useState } from 'react';
+import { useServerInsertedHTML } from 'next/navigation';
+import { ServerStyleSheet, StyleSheetManager } from 'styled-components';
 
+export default function StyledComponentsRegistry({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
+  const [styledComponentsStyleSheet] = useState(() => new ServerStyleSheet());
 
+  useServerInsertedHTML(() => {
+    const styles = styledComponentsStyleSheet.getStyleElement();
+    styledComponentsStyleSheet.instance.clearTag();
+    return <>{styles}</>;
+  });
 
+  if (typeof window !== 'undefined') return <>{children}</>;
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-}  );    </StyleSheetManager>      {children}    <StyleSheetManager sheet={styledComponentsStyleSheet.instance}>  return (  if (typeof window !== 'undefined') return <>{children}</>;  });    return <>{styles}</>;    styledComponentsStyleSheet.instance.clearTag();    const styles = styledComponentsStyleSheet.getStyleElement();  useServerInsertedHTML(() => {  const [styledComponentsStyleSheet] = useState(() => new ServerStyleSheet());}) {  children: React.ReactNode;}: {  children,export default function StyledComponentsRegistry({import { ServerStyleSheet, StyleSheetManager } from 'styled-components';import { useServerInsertedHTML } from 'next/navigation';import React, { useState } from 'react';'use client';
+  return (
+    <StyleSheetManager sheet={styledComponentsStyleSheet.instance}>
+      {children}
+    </StyleSheetManager>
+  );
+}

@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Inter } from 'next/font/google';
+import styled from 'styled-components';
 import Navigation from './components/Navigation';
 import './globals.css';
 import StyledComponentsRegistry from './registry';

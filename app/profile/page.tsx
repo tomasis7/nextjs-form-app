@@ -1,22 +1,23 @@
+'use client';
 
+import ProfileComponent from '../components/Profile';
+import styled from 'styled-components';
 
+const ProfileContainer = styled.div`
+  max-width: 800px;
+  margin: 0 auto;
+`;
 
+const Title = styled.h1`
+  margin-bottom: 2rem;
+  text-align: center;
+`;
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-}  );    </ProfileContainer>      <ProfileComponent />      <Title>Registered Users</Title>    <ProfileContainer>  return (export default function Profile() {`;  text-align: center;  margin-bottom: 2rem;const Title = styled.h1``;  margin: 0 auto;  max-width: 800px;const ProfileContainer = styled.div`import styled from 'styled-components';import ProfileComponent from '../components/Profile';
+export default function Profile() {
+  return (
+    <ProfileContainer>
+      <Title>Registered Users</Title>
+      <ProfileComponent />
+    </ProfileContainer>
+  );
+}

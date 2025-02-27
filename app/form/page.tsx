@@ -1,22 +1,23 @@
+'use client';
 
+import FormComponent from '../components/Form';
+import styled from 'styled-components';
 
+const FormPage = styled.div`
+  max-width: 500px;
+  margin: 0 auto;
+`;
 
+const Title = styled.h1`
+  margin-bottom: 2rem;
+  text-align: center;
+`;
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-}  );    </FormPage>      <FormComponent />      <Title>Register New User</Title>    <FormPage>  return (export default function Form() {`;  text-align: center;  margin-bottom: 2rem;const Title = styled.h1``;  margin: 0 auto;  max-width: 500px;const FormPage = styled.div`import styled from 'styled-components';import FormComponent from '../components/Form';
+export default function Form() {
+  return (
+    <FormPage>
+      <Title>Register New User</Title>
+      <FormComponent />
+    </FormPage>
+  );
+}

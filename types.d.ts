@@ -1,0 +1,24 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+}  export default content;  const content: string;declare module "*.jpg" {}  export default content;  const content: string;declare module "*.png" {}  export default content;  const content: React.FunctionComponent<React.SVGAttributes<SVGElement>>;declare module "*.svg" {}  password: string;  email: string;  name: string;  id: string;interface User {// Global type definitions
