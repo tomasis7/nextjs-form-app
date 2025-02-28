@@ -1,6 +1,14 @@
-# Next.js App Description
+# Next.js Form App
 
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app) that demonstrates form handling and user management.
+
+## Features
+
+- User registration form with validation using React Hook Form and Yup
+- User profile management (view, edit, delete)
+- State management with Zustand
+- Styled components for UI styling
+- API integration with external JSON server
 
 ## Getting Started
 
@@ -18,10 +26,6 @@ bun dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
 ## Project Structure
 
 This project has been migrated from a React Router (v6/v7) structure to Next.js App Router. The main changes include:
@@ -31,14 +35,22 @@ This project has been migrated from a React Router (v6/v7) structure to Next.js 
 - Route parameters use the `[param]` syntax instead of the `:param` syntax
 - Links use Next.js `Link` component instead of React Router's
 
-### Route Conversion Guide
+### Key Directories and Files
 
-| Old Route (React Router)  | New Route (Next.js)       |
-|---------------------------|---------------------------|
-| /                         | /app/page.tsx             |
-| /about                    | /app/about/page.tsx       |
-| /users/:id                | /app/users/[id]/page.tsx  |
-| /products/:category/:id   | /app/products/[category]/[id]/page.tsx |
+- `/app` - Main application code with Next.js App Router structure
+  - `/components` - Reusable UI components
+  - `/form` - User registration page
+  - `/profile` - User profile management page
+- `/lib` - Utility functions and state management (Zustand store)
+- `middleware.ts` - Next.js middleware for request handling
+
+### Route Structure
+
+| Route     | Description           | File Path                |
+|----------|-----------------------|--------------------------|
+| /        | Home page             | /app/page.tsx            |
+| /form    | Registration form     | /app/form/page.tsx       |
+| /profile | User profiles         | /app/profile/page.tsx    |
 
 ## Learn More
 
